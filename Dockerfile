@@ -12,14 +12,14 @@ RUN apt-get update -y && \
 WORKDIR /analytics
 
 # Copy requirements first (for caching efficiency)
-COPY /analytics/requirements.txt .
+COPY analytics/requirements.txt .
 
 # Upgrade pip and install Python dependencies
 RUN pip install --upgrade pip setuptools wheel && \
     pip install -r requirements.txt
 
 # Copy application code
-COPY . .
+COPY analytics/ .
 
 # Expose the port the app
 EXPOSE 5153
