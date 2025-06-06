@@ -12,7 +12,7 @@ RUN apt-get update -y && \
 WORKDIR /analytics
 
 # Copy requirements first (for caching efficiency)
-COPY requirements.txt .
+COPY /analytics/requirements.txt .
 
 # Upgrade pip and install Python dependencies
 RUN pip install --upgrade pip setuptools wheel && \
