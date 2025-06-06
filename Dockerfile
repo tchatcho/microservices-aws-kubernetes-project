@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Set work directory
-WORKDIR /app
+WORKDIR /analytics
 
 # Copy requirements first (for caching efficiency)
 COPY requirements.txt .
